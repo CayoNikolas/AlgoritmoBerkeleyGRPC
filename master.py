@@ -4,12 +4,16 @@ import proto_pb2
 import proto_pb2_grpc
 import random
 
-ports = ["50052", "50053"]
+ports = ["50051", "50052", "50053"]
+my_port = "50051"
 time = random.randint(1,52)
 times = []
 ajust = 0
 def request_time():
     for port in ports:
+        if(port == my_port):
+            times.append(0)
+            continue
         with grpc.insecure_channel('localhost:'+port) as channel:
             stub = proto_pb2_grpc.ClocksServerStub(channel)
             response = stub.RequestTimeDiff(proto_pb2.TimeDiffRequest(time=time))
@@ -18,11 +22,13 @@ def request_time():
 
 def adjust_time():
     global time
-    ajust = (sum(times)) // (len(times)+1)
+    ajust = (sum(times)) // len(times)
     old_time = time
     time += ajust
-    print("Hora atual: "+str(time))
     for index, port in enumerate(ports):
+        if(port == my_port):
+            print("Hora atual: "+str(time))
+            continue
         new_ajust = time - (old_time+times[index])
         with grpc.insecure_channel('localhost:'+port) as channel:
             stub = proto_pb2_grpc.ClocksServerStub(channel)
