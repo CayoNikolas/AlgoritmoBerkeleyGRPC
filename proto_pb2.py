@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bproto.proto\x12\x06\x63locks\"\x1f\n\x0fTimeDiffRequest\x12\x0c\n\x04time\x18\x01 \x01(\t\" \n\x10TimeDiffResponse\x12\x0c\n\x04\x64iff\x18\x01 \x01(\x05\"!\n\x10TimeAjustRequest\x12\r\n\x05\x61just\x18\x01 \x01(\x05\"#\n\x11TimeAjustResponse\x12\x0e\n\x06status\x18\x01 \x01(\x08\x32\x9d\x01\n\x0c\x43locksServer\x12\x44\n\x0fRequestTimeDiff\x12\x17.clocks.TimeDiffRequest\x1a\x18.clocks.TimeDiffResponse\x12G\n\x10RequestTimeAjust\x12\x18.clocks.TimeAjustRequest\x1a\x19.clocks.TimeAjustResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bproto.proto\x12\x06\x63locks\"\x1f\n\x0fTimeDiffRequest\x12\x0c\n\x04time\x18\x01 \x01(\x05\" \n\x10TimeDiffResponse\x12\x0c\n\x04\x64iff\x18\x01 \x01(\x05\"!\n\x10TimeAjustRequest\x12\r\n\x05\x61just\x18\x01 \x01(\x05\"#\n\x11TimeAjustResponse\x12\x0e\n\x06status\x18\x01 \x01(\x08\x32\x9d\x01\n\x0c\x43locksServer\x12\x44\n\x0fRequestTimeDiff\x12\x17.clocks.TimeDiffRequest\x1a\x18.clocks.TimeDiffResponse\x12G\n\x10RequestTimeAjust\x12\x18.clocks.TimeAjustRequest\x1a\x19.clocks.TimeAjustResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
