@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package clocks;
+
+service ClocksServer{
+    rpc RequestTimeDiff (TimeDiffRequest) returns (TimeDiffResponse);
+    rpc RequestTimeAjust (TimeAjustRequest) returns (TimeAjustResponse);
+}
+
+message TimeDiffRequest{
+	string time = 1;
+}
+
+message TimeDiffResponse{
+	int32 diff = 1;
+}
+
+message TimeAjustRequest{
+	int32 ajust = 1;
+}
+
+message TimeAjustResponse{
+	bool status = 1;
+}
